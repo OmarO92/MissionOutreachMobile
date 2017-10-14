@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using ZXing.Net.Mobile.Forms;
@@ -15,16 +16,17 @@ namespace MissionOutreachMobile.Views
         {
             InitializeComponent();
             UseIDButton.Clicked += UseIDButton_Clicked;
+            registerButton.Clicked += RegisterButton_Clicked;
         }
 
         async void Handle_Clicked(object sender, System.EventArgs e)
         {
             barcodeScannerPage = new ZXingScannerPage();
-            barcodeScannerPage.IsScanning = true;
+          //  barcodeScannerPage.IsScanning = true;
             barcodeScannerPage.Title = "Badge Scanner";
             barcodeScannerPage.OnScanResult += (result) =>
             {
-                barcodeScannerPage.IsScanning = false;
+               // barcodeScannerPage.IsScanning = false;
                 Device.BeginInvokeOnMainThread(() =>
                 {
                     Navigation.PopAsync();
@@ -45,6 +47,11 @@ namespace MissionOutreachMobile.Views
         {
             await DisplayAlert("Used ID", IdEntry.Text, "Accept", "Cancel");
             await Navigation.PushAsync(new CustomerListPage());
+        }
+
+        async void RegisterButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new RegistrationPage());
         }
     }
 }

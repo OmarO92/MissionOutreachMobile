@@ -29,15 +29,17 @@
             RelativeLayout.HeightConstraint="{ConstraintExpression 
                 Type=RelativeToParent,
                 Property=Height,
-                Factor=0.3}"
+                Factor=0.4}"
                 >
-            <Label Text="Welcome" TextColor="Black" FontAttributes="Bold" FontSize="30" HorizontalOptions="Center"/>
-            <Button Text="Scan In" BackgroundColor="#000" BorderRadius="15" HeightRequest="30" FontAttributes="Bold" TextColor="White" Clicked="Handle_Clicked"/>
+            <Label Text="Welcome" TextColor="Black" FontAttributes="Bold" FontSize="28" HorizontalOptions="Center"/>
+            <Button Text="Scan In" BackgroundColor="#000" BorderRadius="15" HeightRequest="35" FontAttributes="Bold" TextColor="White" Clicked="Handle_Clicked"/>
                 
-            <Label Text="Lost Badge? Use your ID!" TextColor="#0a78d8" FontAttributes="Bold" FontSize="12" HorizontalOptions="Center"/>
+           
+            <Label Text="Lost Badge? Use your ID!" TextColor="#000" FontAttributes="Bold" FontSize="12" HorizontalOptions="Center"/>
             <Entry Placeholder="XXX" x:Name="IdEntry"/>
-            <Button Text="Use ID" BackgroundColor="#000" BorderRadius="15" HeightRequest="30" FontAttributes="Bold" TextColor="White" x:Name="UseIDButton"/>
+            <Button Text="Use ID" BackgroundColor="#000" BorderRadius="15" HeightRequest="35" FontAttributes="Bold" TextColor="White" x:Name="UseIDButton"/>
 
+                 <Button Text="No account? Register" TextColor="#FF3232" FontAttributes="Bold" FontSize="12" HorizontalOptions="Center" x:Name="registerButton"/>
         </StackLayout>
             <StackLayout 
             RelativeLayout.WidthConstraint="{ConstraintExpression
