@@ -1,4 +1,5 @@
 ﻿using Xamarin.Forms;
+using MissionOutreachMobile.Views;
 
 namespace MissionOutreachMobile
 {
@@ -8,7 +9,7 @@ namespace MissionOutreachMobile
         {
             InitializeComponent();
 
-            MainPage = new MissionOutreachMobilePage();
+            MainPage = new NavigationPage(new CustomerLoginPage());
         }
 
         protected override void OnStart()

@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using MissionOutreachMobile;
 
 namespace MissionOutreachMobile.iOS
 {
@@ -14,7 +15,12 @@ namespace MissionOutreachMobile.iOS
         {
             global::Xamarin.Forms.Forms.Init();
 
+
+           //ZXing.Net.Mobile.Forms.iOS.Platform.Init();
+
+
             LoadApplication(new App());
+
 
             return base.FinishedLaunching(app, options);
         }

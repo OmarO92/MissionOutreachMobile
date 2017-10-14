@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="MissionOutreachMobile.Views.CustomerLoginPage"
+    BackgroundColor="#84b3ff"
+    Padding="0,20,0,0"
+    Title="MissionOutReach Login">
+	<ContentPage.Content>
+         <RelativeLayout>
+             <BoxView Color="#fff" x:Name="banner"
+                RelativeLayout.WidthConstraint="{ConstraintExpression 
+                Type=RelativeToParent,
+                Property=Width,
+                Factor=1}"
+
+                RelativeLayout.HeightConstraint="{ConstraintExpression 
+                Type=RelativeToParent,
+                Property=Height,
+                Factor=0.4}"/>
+            
+           <StackLayout Orientation="Vertical" 
+                HorizontalOptions="Center" 
+                VerticalOptions="Center"
+                RelativeLayout.WidthConstraint="{ConstraintExpression
+                Type=RelativeToParent,
+                Property=Width,
+                Factor=1}"
+                
+            RelativeLayout.HeightConstraint="{ConstraintExpression 
+                Type=RelativeToParent,
+                Property=Height,
+                Factor=0.3}"
+                >
+            <Label Text="Welcome" TextColor="Black" FontAttributes="Bold" FontSize="30" HorizontalOptions="Center"/>
+            <Button Text="Scan In" BackgroundColor="#000" BorderRadius="15" HeightRequest="30" FontAttributes="Bold" TextColor="White" Clicked="Handle_Clicked"/>
+                
+            <Label Text="Lost Badge? Use your ID!" TextColor="#0a78d8" FontAttributes="Bold" FontSize="12" HorizontalOptions="Center"/>
+            <Entry Placeholder="XXX" x:Name="IdEntry"/>
+            <Button Text="Use ID" BackgroundColor="#000" BorderRadius="15" HeightRequest="30" FontAttributes="Bold" TextColor="White" x:Name="UseIDButton"/>
+
+        </StackLayout>
+            <StackLayout 
+            RelativeLayout.WidthConstraint="{ConstraintExpression
+                Type=RelativeToParent,
+                Property=Width,
+                Factor=1}"
+                
+            RelativeLayout.YConstraint="{ConstraintExpression
+                Type=RelativeToView,
+                ElementName=banner,
+                Property=Height,
+                Factor=1,
+                Constant=30}">
+                
+            <Label Text="Your Involvement Matters" HorizontalOptions="Center" FontAttributes="Bold" FontSize="15" />
+            <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="13">
+            By joining, we will have supplies special to you on the next visit.               
+            </Label>
+            <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="13">
+By Scanning in you are helping us increase our number accuracy. We can now be more prepared in the future provide for those in need.                      
+            </Label>
+        </StackLayout>
+        </RelativeLayout>
+        
+	</ContentPage.Content>
+</ContentPage>
