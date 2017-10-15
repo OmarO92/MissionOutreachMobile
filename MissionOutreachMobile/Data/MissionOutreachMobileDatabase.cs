@@ -19,8 +19,8 @@ namespace MissionOutreachMobile.Data
         public Task<List<Customer>>GetCusomtersAsync() {
             return database.Table<Customer>().ToListAsync();
         }
-        public Task<Customer> GetSpecificCustomersAsync(Customer customer) {
-            return database.Table<Customer>().Where(i => i.QR == customer.QR)
+        public Task<Customer> GetSpecificCustomersAsync(string QR) {
+            return database.Table<Customer>().Where(i => i.QR == QR)
                            .FirstOrDefaultAsync();
         }
 
@@ -29,7 +29,7 @@ namespace MissionOutreachMobile.Data
             Debug.WriteLine($"Inserted {customer.Name}");
         }
         public async void ScanCustomerAsync(Customer customer) {
-            Customer updateCustomer = await GetSpecificCustomersAsync(customer);
+            Customer updateCustomer = await GetSpecificCustomersAsync(customer.QR);
             updateCustomer.Status = "In";
            await database.UpdateAsync(updateCustomer);
             Debug.WriteLine($"Updated {updateCustomer.Name} to  {updateCustomer.Status}");

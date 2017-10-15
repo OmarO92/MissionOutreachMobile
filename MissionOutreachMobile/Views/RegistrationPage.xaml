@@ -18,7 +18,7 @@
                 RelativeLayout.HeightConstraint="{ConstraintExpression 
                 Type=RelativeToParent,
                 Property=Height,
-                Factor=0.4}"/>
+                Factor=0.7}"/>
             
            <StackLayout Orientation="Vertical" 
                 HorizontalOptions="FillAndExpand" 
@@ -32,7 +32,7 @@
             RelativeLayout.HeightConstraint="{ConstraintExpression 
                 Type=RelativeToParent,
                 Property=Height,
-                Factor=0.4}"
+                Factor=0.7}"
                 >
        <Label Text="Name:" TextColor="#000" FontAttributes="Bold" FontSize="12"/>
         <Entry Placeholder="first" x:Name="firstNameEntry"/>
@@ -40,6 +40,8 @@
         <Entry Placeholder="last" x:Name="lastNameEntry"/>
          <Label Text="DOB:" TextColor="#000" FontAttributes="Bold" FontSize="12"/>
         <Entry Placeholder="ddmmyyy" x:Name="dobEntry"/>
+        <Label Text="QR:" TextColor="#000" FontAttributes="Bold" FontSize="12"/>
+        <Entry Placeholder="0000" x:Name="qrEntry"/>               
         <Button Text="Sign Up" BackgroundColor="#000" BorderRadius="8" HeightRequest="35" FontAttributes="Bold" TextColor="White" x:Name="signUpButton"/>        
         </StackLayout>
        

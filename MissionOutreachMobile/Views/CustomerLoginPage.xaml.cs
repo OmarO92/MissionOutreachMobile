@@ -33,7 +33,8 @@ namespace MissionOutreachMobile.Views
                 Device.BeginInvokeOnMainThread(() =>
                 {
                     Navigation.PopAsync();
-                    DisplayAlert("Scanned ID", result.Text, "OK");
+                    //DisplayAlert("Scanned ID", result.Text, "OK");
+                    processQR(result.Text);
                     //scanResult = result.Text;
                     //EntryUserName.Text = scanResult;
                 });
@@ -49,8 +50,19 @@ namespace MissionOutreachMobile.Views
         async void UseIDButton_Clicked(object sender, EventArgs e)
         {
 
-            await DisplayAlert("Used ID", IdEntry.Text, "Accept", "Cancel");
-            await Navigation.PushAsync(new CustomerListPage());
+            Customer customer = new Customer();
+            customer = await App.Database.GetSpecificCustomersAsync(IdEntry.Text);
+            if (customer != null)
+            {
+                await DisplayAlert("Used ID", IdEntry.Text, "Accept", "Cancel");
+                await Navigation.PushAsync(new CustomerListPage());
+
+            }
+            else
+              await  DisplayAlert("Error", IdEntry.Text + " Not Found", "Cancel");
+
+
+
             //List<RestCustomers> c = new List<RestCustomers>();
             //try{
             //    c = await App.RestManager.GetAllCustomersAsync();
@@ -76,6 +88,18 @@ namespace MissionOutreachMobile.Views
         {
             await Navigation.PushAsync(new CustomerListPage());
 
+        }
+        async void processQR(string qr){
+            Customer customer = new Customer();
+            customer = await App.Database.GetSpecificCustomersAsync(qr);
+            if (customer != null)
+            {
+                await DisplayAlert("Used ID", qr, "Accept", "Cancel");
+                await Navigation.PushAsync(new CustomerListPage());
+
+            }
+            else
+                await DisplayAlert("Error", qr + " Not Found", "Cancel");   
         }
     }
 }
