@@ -3,15 +3,48 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="MissionOutreachMobile.Views.RegistrationPage"
     Title="Registration"
-    Padding="0,20,0,0">
+    Padding="0,20,0,0"
+    BackgroundColor="#1fa67b">
 
-    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Padding="20" >
-        <Label Text="Name:" TextColor="#0a78d8" FontAttributes="Bold" FontSize="12"/>
-        <Entry Placeholder="XXX" x:Name="firstNameEntry"/>
-         <Label Text="Last Name:" TextColor="#0a78d8" FontAttributes="Bold" FontSize="12"/>
-        <Entry Placeholder="XXX" x:Name="lastNameEntry"/>
-         <Label Text="DOB:" TextColor="#0a78d8" FontAttributes="Bold" FontSize="12"/>
-        <Entry Placeholder="XXX" x:Name="dobEntry"/>
-        <Button Text="Sign Up" BackgroundColor="#000" BorderRadius="8" HeightRequest="35" FontAttributes="Bold" TextColor="White" x:Name="signUpButton"/>
-    </StackLayout>
+
+    <ContentPage.Content>
+         <RelativeLayout>
+             <BoxView Color="#fff" x:Name="banner"
+                RelativeLayout.WidthConstraint="{ConstraintExpression 
+                Type=RelativeToParent,
+                Property=Width,
+                Factor=1}"
+
+                RelativeLayout.HeightConstraint="{ConstraintExpression 
+                Type=RelativeToParent,
+                Property=Height,
+                Factor=0.4}"/>
+            
+           <StackLayout Orientation="Vertical" 
+                HorizontalOptions="FillAndExpand" 
+                VerticalOptions="Center"
+                Padding="20"
+                RelativeLayout.WidthConstraint="{ConstraintExpression
+                Type=RelativeToParent,
+                Property=Width,
+                Factor=1}"
+                
+            RelativeLayout.HeightConstraint="{ConstraintExpression 
+                Type=RelativeToParent,
+                Property=Height,
+                Factor=0.4}"
+                >
+       <Label Text="Name:" TextColor="#000" FontAttributes="Bold" FontSize="12"/>
+        <Entry Placeholder="first" x:Name="firstNameEntry"/>
+         <Label Text="Last Name:" TextColor="#000" FontAttributes="Bold" FontSize="12"/>
+        <Entry Placeholder="last" x:Name="lastNameEntry"/>
+         <Label Text="DOB:" TextColor="#000" FontAttributes="Bold" FontSize="12"/>
+        <Entry Placeholder="ddmmyyy" x:Name="dobEntry"/>
+        <Button Text="Sign Up" BackgroundColor="#000" BorderRadius="8" HeightRequest="35" FontAttributes="Bold" TextColor="White" x:Name="signUpButton"/>        
+        </StackLayout>
+       
+        </RelativeLayout>
+        </ContentPage.Content>
+    
+  
 </ContentPage>

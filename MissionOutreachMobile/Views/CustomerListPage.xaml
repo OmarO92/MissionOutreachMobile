@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MissionOutreachMobile.Views.CustomerListPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="MissionOutreachMobile.Views.CustomerListPage">
 
  <!-- User HasUnevenRows so that items in the list are spaced as needed -->
-    <ListView x:Name="customerListView" HasUnevenRows="true" 
+   <!-- <ListView x:Name="customerListView" HasUnevenRows="true" 
         IsGroupingEnabled="true" GroupDisplayBinding="{Binding Title}"
-        GroupShortNameBinding="{Binding ShortTitle}"
-            >
+        GroupShortNameBinding="{Binding ShortTitle}"-->
+     <ListView x:Name="customerListView" HasUnevenRows="true" 
+        >
             <!-- GroupShortNameBinding for iOS scroll on right -->
         <ListView.ItemTemplate>
             <DataTemplate>
@@ -16,10 +19,10 @@
                         <Image Source="{Binding ImageUrl}"/>
                         <!-- Stack Layout Vertical by default -->
                         <StackLayout HorizontalOptions="StartAndExpand">
-                            <Label Text="{Binding Name}"/>
-                            <Label Text="{Binding Status}" TextColor="Gray"/>
+                            <Label Text="{Binding Name}" TextColor="#000"/>
+                            <Label Text="{Binding Status}" TextColor="#000"/>
                         </StackLayout>
-                        <Button Text="View"/>
+<!--                        <Button Text="View"/>-->
                        
                     </StackLayout>
                 </ViewCell>
